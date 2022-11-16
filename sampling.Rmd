@@ -1,0 +1,339 @@
+---
+title: Simulations To Optimize Subsampling Chinook Tissues for Run Timing Genetic Analysis
+author: Thomas Buehrens (tbuehrens@dfw.wa.gov) & Jeremy Wilson (jeremy.wilson@dfw.wa.gov)
+output:
+  html_document:
+    code_folding: hide
+    fig_caption: yes
+    theme: cerulean
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+---
+
+<script>
+   $(document).ready(function() {
+     $head = $('#header');
+     $head.prepend('<img src=\"https://privatelands.wdfw.wa.gov/wdfwlogo_clrnotxt.png"\" style=\"float: right;width: 150px;\"/>')
+   });
+</script>
+
+***
+
+Last Updated `r format(Sys.time(), '%m/%d/%Y')`.
+
+***
+
+## Setup
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r functions}
+#==========================================
+#function to inverse logit transform
+#==========================================
+ilogit<-function(x){exp(x)/(1+exp(x))}
+#==========================================
+#function to install or load packages
+#==========================================
+install_or_load_pack <- function(pack){
+  create.pkg <- pack[!(pack %in% installed.packages()[, "Package"])]
+  if (length(create.pkg))
+    install.packages(create.pkg, dependencies = TRUE)
+  sapply(pack, require, character.only = TRUE)
+}
+#==========================================
+#function to install or load packages
+#==========================================
+make_run_list<-function(dat,min_samps){
+  run_list<-c()
+  for(i in 1:max(dat$week)){
+    samps<-sample(dat$sample_number[dat$week==i],min(min_samps,length(dat$sample_number[dat$week==i])),replace = F)
+    run_list<-c(run_list,samps)
+  }
+  return(run_list)
+}
+```
+
+
+```{r packages }
+packages<-c(
+  "lubridate",
+  "tidyverse",
+  "LDATS",
+  "ggplot2",
+  "mgcv",
+  "modelr"
+)
+install_or_load_pack(packages)
+```
+
+
+## User inputs
+```{r user inputs, echo=FALSE}
+#get date list to simulate proportions for
+date_list<-read_csv("2022_Kalama_Chinook_DNA_Samples.csv")%>%
+  mutate(Date=mdy(Date))%>%
+  dplyr::select(date=Date)%>%
+  arrange(date)%>%
+  pull()
+#how steep the change over from spring to fall is...larger value equals steeper slope and more dominant proportions on tails of season
+slope<-2.0
+#how much random walk noise do we want to simulate relative to linear change in proportions?
+process_sd<-0.1
+
+#formula for spline multinomial model
+formula<-
+  list(
+    run2 ~ s(day,bs='ps',m=2,k =floor(length(run_list)/8-1)),
+         ~ s(day,bs='ps',m=2,k =floor(length(run_list)/8-1))
+    )
+# formula<-
+#   list(
+#     run2 ~ s(day),
+#          ~ s(day)
+#     )
+```
+
+## Simulate "True" Chinook Genotype Proportions
+```{r pressure, echo=FALSE}
+#simulate some multinomial data:
+days<-length(min(date_list):max(date_list))
+logit<-tibble(spring= 2*slope + cumsum(rnorm(days,0,process_sd)) - ((4*slope)/days)*(1:days),
+              summer=rep(0,days),
+              fall= -2*slope  + cumsum(rnorm(days,0,process_sd)) + ((4*slope)/days)*(1:days),
+              day=1:days,
+              date=c(min(date_list) + 0:(days-1))
+              )
+
+logit_plt<-logit%>%
+  pivot_longer(values_to = "logit",names_to = "run", cols= - c(day,date))
+
+probs<-data.frame(t(apply(logit%>%dplyr::select(-c(day,date)),1,softmax)))%>%
+  tibble()%>%
+  mutate(day=1:days,date=c(min(date_list) + 0:(days-1)))%>%
+  pivot_longer(values_to = "probs",names_to = "run", cols= - c(day,date))
+  
+ggplot(logit_plt,aes(x=date,y=logit,color=run))+
+  geom_line()+
+  ylab("logit(simulated proportions)")
+
+ggplot(probs,aes(x=date,y=probs,color=run))+
+  geom_line()+
+  ylab("simulated proportions")
+```
+
+## Simulate Run Type for All Existing Samples
+```{r}
+sample_dat<-read_csv("2022_Kalama_Chinook_DNA_Samples.csv")%>%
+  mutate(Date=mdy(Date))%>%
+  dplyr::select(date=Date,sample_number=DNA_Sample_Code,)%>%
+  mutate(week=week(date),week=week-(min(week)-1))%>%
+  left_join(probs)%>%
+  mutate(run=factor(run))%>%
+  group_by(sample_number)%>%
+  mutate(count=as.vector(rmultinom(n=1,size=1,prob=probs)))%>%
+  mutate(run2=as.numeric(run)-1)%>%
+  filter(count>0)
+```
+
+## Estimate "True" Proportions Using Subsample
+
+min(weekly sample size, 3)
+```{r}
+weekly_ss<-3
+run_list<-make_run_list(sample_dat,min_samps = weekly_ss)
+#print(run_list)
+remain_samples<-sample_dat%>%
+  filter(!sample_number %in% run_list)
+
+tdat<-sample_dat%>%
+  filter(sample_number %in% run_list)
+
+# this works (no spline)
+mod1 <- gam(
+  data = tdat,
+  formula = formula,
+  family=multinom(K=2)
+  )
+
+
+preds<-data.frame(predict(mod1,newdata=tibble(expand.grid(day=1:days)),type = "response"))%>%
+  tibble()%>%
+  setNames(c("fall","spring","summer"))%>%
+  mutate(day=1:days,date=c(min(date_list) + 0:(days-1)),type="prediction")%>%
+  pivot_longer(cols=c("fall","spring","summer"),values_to = "probs",names_to = "run")%>%
+  bind_rows(probs%>%
+              mutate(type="true")
+            )
+
+ggplot(preds,aes(x=date,y=probs,color=run,linetype=type))+
+  geom_line()+
+  labs(y="run type proportions",title=paste0("Total Sample Size = ",dim(tdat)[1]," , weekly sample = min(",weekly_ss,", weekly sample size)"))
+```
+
+
+min(weekly sample size, 4)
+```{r}
+add_ss<-1
+weekly_ss<-weekly_ss + add_ss
+run_list<-c(run_list,make_run_list(remain_samples,min_samps = add_ss))
+#print(run_list)
+remain_samples<-sample_dat%>%
+  filter(!sample_number %in% run_list)
+
+
+tdat<-sample_dat%>%
+  filter(sample_number %in% run_list)
+
+# this works (no spline)
+mod1 <- gam(
+  data = tdat,
+  formula = formula,
+  family=multinom(K=2)
+  )
+
+
+
+preds<-data.frame(predict(mod1,newdata=tibble(expand.grid(day=1:days)),type = "response"))%>%
+  tibble()%>%
+  setNames(c("fall","spring","summer"))%>%
+  mutate(day=1:days,date=c(min(date_list) + 0:(days-1)),type="prediction")%>%
+  pivot_longer(cols=c("fall","spring","summer"),values_to = "probs",names_to = "run")%>%
+  bind_rows(probs%>%
+              mutate(type="true")
+            )
+
+ggplot(preds,aes(x=date,y=probs,color=run,linetype=type))+
+  geom_line()+
+  labs(y="run type proportions",title=paste0("Total Sample Size = ",dim(tdat)[1]," , weekly sample = min(",weekly_ss,", weekly sample size)"))
+```
+
+min(weekly sample size, 5)
+```{r}
+add_ss<-1
+weekly_ss<-weekly_ss + add_ss
+run_list<-c(run_list,make_run_list(remain_samples,min_samps = add_ss))
+#print(run_list)
+remain_samples<-sample_dat%>%
+  filter(!sample_number %in% run_list)
+
+
+tdat<-sample_dat%>%
+  filter(sample_number %in% run_list)
+
+# this works (no spline)
+mod1 <- gam(
+  data = tdat,
+  formula = formula,
+  family=multinom(K=2)
+  )
+
+
+
+preds<-data.frame(predict(mod1,newdata=tibble(expand.grid(day=1:days)),type = "response"))%>%
+  tibble()%>%
+  setNames(c("fall","spring","summer"))%>%
+  mutate(day=1:days,date=c(min(date_list) + 0:(days-1)),type="prediction")%>%
+  pivot_longer(cols=c("fall","spring","summer"),values_to = "probs",names_to = "run")%>%
+  bind_rows(probs%>%
+              mutate(type="true")
+            )
+
+ggplot(preds,aes(x=date,y=probs,color=run,linetype=type))+
+  geom_line()+
+  labs(y="run type proportions",title=paste0("Total Sample Size = ",dim(tdat)[1]," , weekly sample = min(",weekly_ss,", weekly sample size)"))
+```
+
+
+min(weekly sample size, 10)
+```{r}
+add_ss<-5
+weekly_ss<-weekly_ss + add_ss
+run_list<-c(run_list,make_run_list(remain_samples,min_samps = add_ss))
+#print(run_list)
+remain_samples<-sample_dat%>%
+  filter(!sample_number %in% run_list)
+
+
+tdat<-sample_dat%>%
+  filter(sample_number %in% run_list)
+
+# this works (no spline)
+mod1 <- gam(
+  data = tdat,
+  formula = formula,
+  family=multinom(K=2)
+  )
+
+
+
+preds<-data.frame(predict(mod1,newdata=tibble(expand.grid(day=1:days)),type = "response"))%>%
+  tibble()%>%
+  setNames(c("fall","spring","summer"))%>%
+  mutate(day=1:days,date=c(min(date_list) + 0:(days-1)),type="prediction")%>%
+  pivot_longer(cols=c("fall","spring","summer"),values_to = "probs",names_to = "run")%>%
+  bind_rows(probs%>%
+              mutate(type="true")
+            )
+
+ggplot(preds,aes(x=date,y=probs,color=run,linetype=type))+
+  geom_line()+
+  labs(y="run type proportions",title=paste0("Total Sample Size = ",dim(tdat)[1]," , weekly sample = min(",weekly_ss,", weekly sample size)"))
+```
+
+all samples
+```{r}
+add_ss<-max(sample_dat%>%group_by(week)%>%summarise(n=n())%>%pull()) - weekly_ss
+weekly_ss<-weekly_ss + add_ss
+run_list<-c(run_list,make_run_list(remain_samples,min_samps = add_ss))
+#print(run_list)
+remain_samples<-sample_dat%>%
+  filter(!sample_number %in% run_list)
+
+
+tdat<-sample_dat%>%
+  filter(sample_number %in% run_list)
+
+# this works (no spline)
+mod1 <- gam(
+  data = tdat,
+  formula = formula,
+  family=multinom(K=2)
+  )
+
+
+preds<-data.frame(predict(mod1,newdata=tibble(expand.grid(day=1:days)),type = "response"))%>%
+  tibble()%>%
+  setNames(c("fall","spring","summer"))%>%
+  mutate(day=1:days,date=c(min(date_list) + 0:(days-1)),type="prediction")%>%
+  pivot_longer(cols=c("fall","spring","summer"),values_to = "probs",names_to = "run")%>%
+  bind_rows(probs%>%
+              mutate(type="true")
+            )
+
+ggplot(preds,aes(x=date,y=probs,color=run,linetype=type))+
+  geom_line()+
+  labs(y="run type proportions",title=paste0("Total Sample Size = ",dim(tdat)[1]," , weekly sample = min(",weekly_ss,", weekly sample size)"))
+```
+
+
+## Generate Final Run List
+```{r make run list}
+dat<-read_csv("2022_Kalama_Chinook_DNA_Samples.csv")%>%
+  mutate(Date=mdy(Date))%>%
+  dplyr::rename(sample_number=DNA_Sample_Code,date=Date)%>%
+  mutate(week=week(date),week=week-(min(week)-1))
+
+run_list<-tibble(sample_number=make_run_list(dat,min_samps=5))%>%
+  mutate(in_sample=1)%>%
+  full_join(dat,by="sample_number")
+
+write_csv(run_list,file="run_list.csv")  
+```
+
