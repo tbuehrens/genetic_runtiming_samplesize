@@ -1,0 +1,123 @@
+---
+title: Kalama Chinook Run Type Composition by Date at Kalama Falls Hatchery
+author: Thomas Buehrens (tbuehrens@dfw.wa.gov), Jeremy Wilson (jeremy.wilson@dfw.wa.gov), Tyson Dammers (tyson.dammers@dfw.wa.gov), Garrett Mckinney (garrett.mckinney@dfw.wa.gov), and Todd Seamons (todd.seamons@dfw.wa.gov)
+output:
+  html_document:
+    code_folding: hide
+    fig_caption: yes
+    theme: cerulean
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+---
+
+<script>
+   $(document).ready(function() {
+     $head = $('#header');
+     $head.prepend('<img src=\"https://privatelands.wdfw.wa.gov/wdfwlogo_clrnotxt.png"\" style=\"float: right;width: 150px;\"/>')
+   });
+</script>
+
+***
+
+Last Updated `r format(Sys.time(), '%m/%d/%Y')`.
+
+***
+
+## Setup
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r functions}
+#==========================================
+#function to inverse logit transform
+#==========================================
+ilogit<-function(x){exp(x)/(1+exp(x))}
+#==========================================
+#function to install or load packages
+#==========================================
+install_or_load_pack <- function(pack){
+  create.pkg <- pack[!(pack %in% installed.packages()[, "Package"])]
+  if (length(create.pkg))
+    install.packages(create.pkg, dependencies = TRUE)
+  sapply(pack, require, character.only = TRUE)
+}
+```
+
+
+```{r packages }
+packages<-c(
+  "lubridate",
+  "tidyverse",
+  "LDATS",
+  "ggplot2",
+  "mgcv",
+  "modelr"
+)
+install_or_load_pack(packages)
+```
+
+
+## User inputs
+```{r user inputs, echo=FALSE}
+#get date list to simulate proportions for
+date_list<-read_csv("2022_Kalama_Chinook_DNA_Samples.csv")%>%
+  mutate(Date=mdy(Date))%>%
+  dplyr::select(date=Date)%>%
+  arrange(date)%>%
+  pull()
+
+## Simulate Run Type for All Existing Samples
+sample_dat<-read_csv("2022_Kalama_Chinook_DNA_Samples.csv")%>%
+  right_join(read_csv("genotyping_results.csv")%>%
+              dplyr::rename(DNA_Sample_Code=`DNA Code`)
+            )%>%
+  mutate(Date=mdy(Date))%>%
+  filter(!is.na(`genotypic run`))%>%
+  dplyr::select(date=Date,sample_number=DNA_Sample_Code,genotypic_run=`genotypic run`)%>%
+  mutate(week=week(date),
+         week=week-(min(week)-1),
+         genotypic_run=factor(genotypic_run),
+         day=yday(date)-min(yday(date))+1
+         )%>%
+  group_by(sample_number)%>%
+  mutate(run2=as.numeric(genotypic_run)-1)
+
+```
+
+
+## Estimate "True" Proportions Using Kalama Genotyping Sample
+
+```{r}
+#formula for spline multinomial model
+formula<-
+  list(
+    run2 ~ s(day,bs='ps',m=2,k =floor(length(sample_dat$sample_number)/8-1)),
+         ~ s(day,bs='ps',m=2,k =floor(length(sample_dat$sample_number)/8-1))
+    )
+
+# this works (no spline)
+mod1 <- gam(
+  data = sample_dat,
+  formula = formula,
+  family=multinom(K=2)
+  )
+
+
+preds<-data.frame(predict(mod1,newdata=tibble(expand.grid(day=1:max(sample_dat$day))),type = "response"))%>%
+  tibble()%>%
+  setNames(c("fall","summer","spring"))%>%
+  mutate(day=1:max(sample_dat$day),date=c(min(sample_dat$date) + 0:(max(sample_dat$day)-1)),type="prediction")%>%
+  pivot_longer(cols=c("fall","spring","summer"),values_to = "probs",names_to = "run")
+
+ggplot(preds,aes(x=date,y=probs,color=run,linetype=type))+
+  geom_line()+
+  scale_x_date(date_labels = "%b-%d", date_breaks = "2 weeks")+
+  labs(y="run type proportions",title=paste0("Total Sample Size = ",dim(sample_dat)[1]))+
+  theme(axis.text.x = element_text(angle=90))
+```

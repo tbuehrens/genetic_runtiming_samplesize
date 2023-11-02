@@ -1,0 +1,101 @@
+DNA Code,Phenotypic Run ,genotypic run,run timing genotype,Thompson et al call,AA,CC,GG,TT,homozygosity,spring allele proportion,Ots28_11023212,Ots28_11025336,Ots28_11033282,Ots28_11062192,Ots37124-12267397,Ots37124-12272852,Ots28_11070757,Ots28_11071377,Ots28_11072994,Ots28_11073102,Ots37124-12277401,Ots28_11073668,Ots28_11075348,Ots28_11075712,Ots28_11077016,Ots28_11077172,Ots37124-12281207,Ots28_11077576,Ots28_11095755,Ots37124-12310649,Ots28_11143508,Ots28_11160599,Ots28_11164637,Ots28_11186543,Ots28_11201129,Ots28_11207428,Ots28_11210919,Ots28_11202400,Ots28_11205423,Ots28_11202190,Ots28_11202863,Ots28_11205993,Ots28_11206740
+22GR0001,Spring,Spring,recombinant,homozygous spring,7,3,3,9,0.7857,0.89,AA,AA,GA,CG,CT,CT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TG,TT,CT,GG,CC,CC,CT,CC
+22GR0002,Spring,Spring,recombinant,partial heterozygote,6,3,3,8,0.7143,0.86,AA,AA,GA,CG,CT,CT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,AT,AT,AA,TT,AA,TT,GG,TG,TT,CT,GG,CC,CA,CT,CC
+22GR0003,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,10,0.9259,0.96,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,,AA,TT,AA,AA,TT,AA,TT,GG,TG,CT,TT,GG,CC,CC,TT,CC
+22GR0008,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,8,0.8519,0.93,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,,AA,TT,AA,AA,TT,AA,AT,GG,TG,CT,CT,GG,CC,CC,CT,CC
+22GR0005,Spring,Spring,homozygous spring,homozygous spring,7,4,5,11,1,1,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,,AA,TT,AA,AA,TT,AA,TT,GG,GG,TT,TT,GG,CC,CC,TT,CC
+22GR0007,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,10,0.9615,0.98,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,,AA,TT,AA,AA,TT,AA,TT,GG,,CT,TT,GG,CC,CC,TT,CC
+22GR0010,Spring,Spring,highly homozygous spring,homozygous spring,5,4,4,10,0.92,0.96,AA,,GG,CC,TT,TT,AA,TT,CC,,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,,TT,GG,TG,TT,CT,GG,CC,,,CC
+22GR0011,Spring,Spring,recombinant,homozygous spring,4,3,3,9,0.6786,0.8,AG,AC,GA,CG,CT,CT,AG,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TG,TT,CT,GG,CC,CC,CT,CC
+22GR0014,Spring,Spring,recombinant,no data,6,3,3,7,0.7917,0.9,AA,AA,GA,CG,,CT,AA,TT,CC,TT,,TT,GG,CC,CC,GG,,AA,TT,,AA,TT,AA,TT,GG,TG,TT,CT,GG,,CC,CT,CC
+22GR0013,Spring,Spring,homozygous spring,homozygous spring,7,4,5,12,1,1,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,GG,TT,TT,GG,CC,CC,TT,CC
+22GR0017,Spring,Spring,recombinant,homozygous spring,7,3,3,9,0.7857,0.86,AA,AA,GA,CG,CT,CT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TT,CT,CT,GG,CC,CC,CC,CC
+22GR0020,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,11,0.963,0.98,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TG,TT,,GG,CC,CA,TT,CC
+22GR0032,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,11,0.9286,0.96,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TT,CT,CT,GG,CC,CC,CT,CC
+22GR0037,Spring,Spring,highly homozygous spring,homozygous spring,7,4,3,9,0.8214,0.84,AA,AA,GA,CG,CT,CT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TT,CC,CT,GG,CC,CC,CC,CC
+22GR0031,Spring,Spring,homozygous spring,homozygous spring,7,4,5,12,1,1,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,GG,TT,TT,GG,CC,CC,TT,CC
+22GR0024,Spring,Spring,homozygous spring,homozygous spring,7,5,4,12,1,1,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TT,CC,TT,GG,CC,CC,CT,CC
+22GR0066,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,11,0.9286,0.96,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TG,TT,CT,GG,CC,CC,CT,CC
+22GR0067,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,11,0.9286,0.96,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TG,CT,TT,GG,CC,CC,CT,CC
+22GR0065,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,12,0.9643,0.98,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TT,CT,TT,GG,CC,CC,TT,CC
+22GR0048,Spring,Spring,homozygous spring,homozygous spring,7,4,5,11,1,1,AA,AA,GG,CC,TT,TT,AA,TT,CC,,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,GG,TT,TT,GG,CC,CA,TT,CC
+22GR0083,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,10,0.9259,0.96,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,,AA,TT,AA,AA,TT,AA,TT,GG,TT,CT,CT,GG,CC,CC,CC,CC
+22GR0078,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,11,0.9286,0.96,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TT,CT,CT,GG,CC,CC,CC,CC
+22GR0084,Spring,Spring,homozygous spring,homozygous spring,7,5,4,11,1,1,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,,AA,TT,AA,AA,TT,AA,TT,GG,TT,CC,TT,GG,CC,CC,CT,CC
+22GR0076,Spring,Spring,homozygous spring,homozygous spring,7,5,4,12,1,1,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TT,CC,TT,GG,CC,CC,CT,CC
+22GR0097,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,11,0.9286,0.96,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TT,CT,CT,GG,CC,CC,CT,CC
+22GR0094,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,12,0.9643,0.98,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TG,TT,TT,GG,CC,CC,TT,CC
+22GR0093,Spring,,,,0,0,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+22GR0096,Spring,Spring,highly homozygous spring,homozygous spring,7,4,3,8,0.8462,0.85,AA,AA,GA,CG,CT,CT,AA,TT,CC,,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,,GG,TT,TT,CC,GG,CC,CC,CC,CC
+22GR0100,Spring,Spring,homozygous spring,homozygous spring,7,5,4,12,1,1,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TT,CC,TT,GG,CC,CC,TT,CC
+22GR0099,Spring,Heterozygote,highly heterozygous,heterozygote,1,3,1,1,0.2143,0.43,AG,AC,AA,GG,CC,CC,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,AT,AG,AT,AT,GA,GT,CA,AT,TG,TT,CT,CC,GG,CC,CC,CT,CC
+22GR0098,Spring,Heterozygote,highly heterozygous,heterozygote,0,1,0,1,0.0741,0.46,AG,AC,GA,CG,CT,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,,AG,AT,AT,GA,GT,CA,AT,TG,TT,CC,CT,GG,CC,CC,TT,CC
+22GR0108,Spring,Spring,homozygous spring,homozygous spring,7,5,4,12,1,1,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TT,CC,TT,GG,CC,CC,TT,CC
+22GR0120,Spring,Heterozygote,highly heterozygous,heterozygote,0,1,0,1,0.0769,0.46,AG,AC,GA,CG,CT,CT,AG,TC,CT,,TA,TA,GA,CT,CT,GA,AT,AG,AT,AT,GA,GT,CA,,TG,TT,CC,CT,GG,CC,CC,TT,CC
+22GR0129,Spring,Heterozygote,highly heterozygous,heterozygote,0,1,0,1,0.0769,0.46,AG,,GA,,CT,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,AT,AG,AT,AT,GA,GT,CA,AT,TG,TT,CC,CT,GG,CC,CC,TT,CC
+22GR0123,Spring,Heterozygote,highly heterozygous,heterozygote,3,1,0,1,0.1923,0.52,AA,AA,GA,CG,CT,CT,AA,TC,CT,TA,TA,TA,GA,CT,CT,GA,,AG,,AT,GA,GT,CA,AT,TG,TT,CC,CT,GG,CC,CC,TT,CC
+22GR0127,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,11,0.9286,0.96,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TG,CT,TT,GG,CC,CC,TT,CC
+22GR0132,Spring,Heterozygote,highly heterozygous,heterozygote,0,1,0,1,0.0769,0.46,AG,AC,GA,CG,CT,CT,AG,TC,CT,,TA,TA,GA,CT,CT,GA,AT,AG,,AT,GA,GT,CA,AT,TG,TT,CC,CT,GG,CC,CC,CT,CC
+22GR0142,Spring,Heterozygote,highly heterozygous,heterozygote,0,1,0,1,0.0741,0.46,AG,AC,GA,CG,,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,AT,AG,AT,AT,GA,GT,CA,AT,TG,TT,CC,CT,GG,CC,CC,TT,CC
+22GR0134,Spring,Heterozygote,heterozygote,heterozygote,0,0,0,0,0,0.5,AG,AC,GA,CG,CT,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,AT,AG,AT,AT,GA,GT,CA,AT,TG,TG,CT,CT,GG,CC,CA,TT,CC
+22GR0133,Spring,Spring,recombinant,homozygous spring,7,3,3,9,0.7857,0.89,AA,AA,GA,CG,CT,CT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TG,CT,TT,GG,CC,CA,CT,CC
+22GR0156,Spring,Heterozygote,highly heterozygous,likely heterozygote,0,1,0,1,0.087,0.46,AG,AC,,CG,,CT,AG,TC,CT,TA,,TA,GA,CT,CT,GA,,AG,,AT,GA,GT,CA,AT,TG,TT,CC,CT,GG,CC,CC,TT,CC
+22GR0145,Spring,Heterozygote,highly heterozygous,heterozygote,1,3,1,1,0.2222,0.41,AG,AC,AA,GG,CC,CC,AG,TC,CT,TA,TA,,GA,CT,CT,GA,AT,AG,AT,AT,GA,GT,CA,AT,TG,TT,CT,CC,GG,CC,CC,CT,CC
+22GR0158,Spring,Heterozygote,heterozygote,heterozygote,0,0,0,0,0,0.5,,,GA,,CT,CT,AG,TC,CT,,TA,TA,GA,CT,CT,,AT,AG,,AT,GA,GT,CA,,TG,TG,CT,,GG,CC,CA,TT,CC
+22GR0153,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,12,0.9643,0.98,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TT,TT,CT,GG,CC,CC,CT,CC
+22GR0168,Fall,Heterozygote,heterozygote,heterozygote,0,0,0,0,0,0.5,AG,AC,GA,CG,CT,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,AT,AG,AT,AT,GA,GT,CA,AT,TG,TG,CT,CT,GG,CC,CA,CT,CC
+22GR0171,Spring,Heterozygote,highly heterozygous,heterozygote,1,1,0,1,0.1071,0.5,AG,AC,GA,CG,CT,CT,AA,TC,CT,TA,TA,TA,GA,CT,CT,GA,AT,AG,AT,AT,GA,GT,CA,AT,TG,TT,CC,CT,GG,CC,CC,CT,CC
+22GR0173,Spring,Spring,highly homozygous spring,homozygous spring,5,5,5,10,0.8929,0.8,AG,AC,AA,GG,CC,CC,AG,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,GG,TT,TT,GG,CC,CC,TT,CC
+22GR0166,Spring,Spring,recombinant,homozygous spring,4,3,3,9,0.6786,0.84,AG,AC,GA,CG,CT,CT,AG,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TG,CT,TT,GG,CC,CC,TT,CC
+22GR0180,Fall,Heterozygote,heterozygote,heterozygote,0,0,0,0,0,0.5,AG,AC,GA,CG,CT,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,,AG,AT,AT,GA,GT,CA,AT,TG,TG,CT,CT,AG,TC,CC,CT,TC
+22GR0179,Spring,Spring,highly homozygous spring,homozygous spring,7,3,4,10,0.8571,0.93,AA,AA,GA,CG,CT,CT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,GG,TT,TT,GG,CC,CC,TT,CC
+22GR0176,Fall,Heterozygote,heterozygote,heterozygote,0,0,0,0,0,0.5,AG,AC,GA,CG,CT,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,AT,AG,AT,AT,,GT,CA,AT,TG,TG,CT,CT,GG,CC,CC,TT,CC
+22GR0177,Fall,Heterozygote,heterozygote,likely heterozygote,0,0,0,0,0,0.5,AG,AC,GA,CG,CT,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,,AG,AT,,GA,GT,CA,AT,TG,TG,CT,CT,GG,CC,CC,TT,CC
+22GR0184,Fall,Heterozygote,highly heterozygous,heterozygote,0,1,0,1,0.0769,0.46,AG,AC,GA,CG,CT,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,,AG,AT,AT,GA,GT,CA,,TG,TT,CC,CT,AG,TC,CC,CT,TC
+22GR0186,Fall,Heterozygote,highly heterozygous,heterozygote,0,0,0,1,0.0357,0.48,AG,AC,GA,CG,CT,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,AT,AG,AT,AT,GA,GT,CA,AT,TG,TT,CT,CT,GG,CC,CC,TT,CC
+22GR0187,Fall,Heterozygote,highly heterozygous,heterozygote,1,2,0,1,0.1429,0.43,AG,AC,GA,CG,CT,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,AT,AG,AT,AT,GA,GT,CA,AA,TG,TT,CC,CC,GG,CC,CC,CT,CC
+22GR0185,Spring,Heterozygote,highly heterozygous,heterozygote,0,1,0,1,0.0714,0.46,AG,AC,GA,CG,CT,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,AT,AG,AT,AT,GA,GT,CA,AT,TG,TT,CC,CT,GG,CC,CC,TT,CC
+22GR0199,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,TT,CC
+22GR0192,Fall,Fall,highly homozygous fall,homozygous fall,9,7,6,5,0.9643,0.02,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TG,TT,CC,CC,GG,CC,CC,CT,CC
+22GR0202,Spring,Heterozygote,highly heterozygous,heterozygote,0,1,0,1,0.0741,0.46,AG,AC,GA,CG,CT,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,AT,AG,AT,AT,GA,GT,CA,AT,TG,TT,CC,,GG,CC,CC,TT,CC
+22GR0194,Fall,Heterozygote,heterozygote,heterozygote,0,0,0,0,0,0.5,AG,AC,GA,CG,CT,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,,AG,,AT,GA,GT,CA,AT,TG,TG,CT,CT,GG,CC,CC,TT,CC
+22GR0207,Fall,Fall,highly homozygous fall,homozygous fall,9,6,5,6,0.9286,0.04,GG,CC,AA,GG,CC,CT,AG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,TT,CC
+22GR0211,Fall,Heterozygote,highly heterozygous,heterozygote,1,3,1,1,0.2222,0.41,AG,AC,AA,GG,CC,CC,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,,AG,AT,AT,GA,GT,CA,AT,TG,TT,CC,CT,GG,CC,CC,CT,CC
+22GR0208,Fall,Heterozygote,highly heterozygous,heterozygote,1,2,1,0,0.1481,0.44,AG,AC,AA,GG,CC,CC,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,,AG,AT,AT,GA,GT,CA,AT,TG,TG,CT,CT,GG,CC,CC,TT,CC
+22GR0204,Fall,Heterozygote,heterozygote,heterozygote,0,0,0,0,0,0.5,AG,AC,GA,CG,CT,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,,AG,AT,AT,GA,GT,CA,AT,TG,TG,CT,CT,GG,CC,CC,TT,CC
+22GR0225,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,11,0.9286,0.96,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TG,TT,CT,GG,CC,CA,CT,CC
+22GR0223,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,TT,CC
+22GR0228,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,TT,CC
+22GR0220,Spring,Spring,highly homozygous spring,homozygous spring,7,4,4,12,0.9643,0.98,AA,AA,GG,CC,TT,TT,AA,TT,CC,TT,TT,TT,GG,CC,CC,GG,TT,AA,TT,AA,AA,TT,AA,TT,GG,TT,TT,CT,GG,CC,CC,CT,CC
+22GR0245,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,TT,CC
+22GR0246,Fall,Fall,highly homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,AG,TC,CC,CT,TC
+22GR0243,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,CT,CC
+22GR0239,Fall,Fall,highly homozygous fall,no data,6,6,6,5,1,0,GG,CC,AA,GG,,CC,GG,CC,TT,,,AA,AA,TT,TT,AA,,GG,AA,,GG,GG,CC,AA,TT,TT,CC,CC,AG,,CC,CT,TC
+22GR0262,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,TT,CC
+22GR0261,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,TT,CC
+22GR0257,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,TT,CC
+22GR0251,Spring,Heterozygote,heterozygote,heterozygote,0,0,0,0,0,0.5,AG,AC,GA,CG,CT,CT,AG,TC,CT,TA,TA,TA,GA,CT,CT,GA,AT,AG,AT,AT,GA,GT,CA,AT,TG,TG,CT,CT,AG,TC,CC,CT,TC
+22GR0291,Fall,Fall,highly homozygous fall,homozygous fall,9,7,6,5,0.9643,0.02,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TG,TT,CC,CC,GG,CC,CC,CT,CC
+22GR0279,Fall,Fall,highly homozygous fall,homozygous fall,9,6,5,6,0.9286,0.04,GG,CC,AA,GG,CC,CT,AG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,TT,CC
+22GR0278,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,TT,CC
+22GR0283,Fall,Fall,homozygous fall,homozygous fall,8,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,CT,CC
+22GR0301,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,TT,CC
+22GR0303,Fall,Fall,highly homozygous fall,homozygous fall,9,7,6,5,0.9643,0.02,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TG,TT,CC,CC,GG,CC,CC,CT,CC
+22GR0314,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,CT,CC
+22GR0313,Fall,Fall,highly homozygous fall,homozygous fall,8,6,5,6,0.8929,0.04,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AT,TT,GG,GT,CA,AA,TT,TT,CC,CC,GG,CC,CC,CT,CC
+22GR0325,Fall,Fall,highly homozygous fall,homozygous fall,8,6,6,6,1,0,GG,CC,AA,GG,,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,AG,,CC,CT,TC
+22GR0332,Fall,Fall,highly homozygous fall,homozygous fall,8,6,6,5,0.9615,0.02,GG,CC,AA,GG,,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,,GG,AA,TT,GG,GG,CC,AA,TG,TT,CC,CC,GG,CC,CC,CT,CC
+22GR0323,Fall,Fall,highly homozygous fall,likely fall,8,5,6,5,0.96,0.02,GG,CC,AA,GG,,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,,GG,AA,,GG,GG,CC,AA,TT,TT,CT,CC,GG,,CC,TT,CC
+22GR0320,Fall,Fall,homozygous fall,no data,5,6,6,5,1,0,GG,CC,,GG,,CC,GG,CC,TT,,,AA,AA,TT,TT,AA,,GG,AA,,GG,GG,CC,AA,TT,TT,CC,CC,GG,,CC,TT,CC
+22GR0336,Fall,Fall,highly homozygous fall,homozygous fall,8,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,AG,TC,CC,CT,TC
+22GR0338,Fall,Fall,homozygous fall,likely fall,8,7,6,5,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,,GG,AA,,GG,GG,CC,AA,TT,TT,CC,CC,GG,,CC,CT,CC
+22GR0335,Fall,Fall,highly homozygous fall,homozygous fall,9,7,6,5,0.9643,0.02,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TG,TT,CC,CC,GG,CC,CC,CT,CC
+22GR0334,Fall,,,,0,0,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+22GR0351,Fall,Fall,homozygous fall,homozygous fall,8,6,6,6,1,0,GG,CC,AA,GG,,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,,CC,TT,CC
+22GR0348,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,CT,CC
+22GR0344,Fall,,,,0,1,1,0,1,0,,,,,,,,,,,,,,,,,,,,,GG,,,,,,CC,,,,,,
+22GR0356,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,AG,TC,CC,CT,TC
+22GR0361,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,CT,CC
+22GR0368,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,AG,TC,CC,CT,TC
+22GR0364,Fall,Fall,homozygous fall,homozygous fall,9,7,6,6,1,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TT,TT,CC,CC,GG,CC,CC,TT,CC
+22GR0370,Fall,Fall,highly homozygous fall,homozygous fall,9,7,6,5,0.9643,0,GG,CC,AA,GG,CC,CC,GG,CC,TT,AA,AA,AA,AA,TT,TT,AA,AA,GG,AA,TT,GG,GG,CC,AA,TG,TT,CC,CC,GG,CC,CC,CT,CC
